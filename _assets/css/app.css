@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "philadelphia";
+  src: url("ThePhiladelphiaStory.eot");
+  src: url("ThePhiladelphiaStory.eot?#iefix") format("embedded-opentype"),
+    url("ThePhiladelphiaStory.woff2") format("woff2"),
+    url("ThePhiladelphiaStory.woff") format("woff"),
+    url("ThePhiladelphiaStory.ttf") format("truetype"),
+    url("ThePhiladelphiaStory.svg#ThePhiladelphiaStory") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+
+.name {
+  font-family: "philadelphia";
+}
