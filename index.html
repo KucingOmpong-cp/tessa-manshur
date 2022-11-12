@@ -107,25 +107,31 @@
     </div>
   </section>
   <section id="time" class="py-8 px-4 bg-black/75">
-    <h2 class="mb-8 font-bold text-center">Wedding Countdown</h2>
-    <div class="flex space-x-4">
-      <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
-        <p class="text-black font-bold text-2xl">09</p>
-        <p class="text-black font-semibold text-lg">Hari</p>
-      </div>
-      <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
-        <p class="text-black font-bold text-2xl">09</p>
-        <p class="text-black font-semibold text-lg">Jam</p>
-      </div>
-      <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
-        <p class="text-black font-bold text-2xl">09</p>
-        <p class="text-black font-semibold text-lg">Menit</p>
-      </div>
-      <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
-        <p class="text-black font-bold text-2xl">09</p>
-        <p class="text-black font-semibold text-lg">Detik</p>
+    <div id="countdown">
+      <h2 class="mb-8 font-bold text-center">Wedding Countdown</h2>
+      <div class="flex space-x-4">
+        <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
+          <p id="day" class="text-black font-bold text-2xl"></p>
+          <p class="text-black font-semibold text-lg">Hari</p>
+        </div>
+        <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
+          <p id="hour" class="text-black font-bold text-2xl"></p>
+          <p class="text-black font-semibold text-lg">Jam</p>
+        </div>
+        <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
+          <p id="min" class="text-black font-bold text-2xl"></p>
+          <p class="text-black font-semibold text-lg">Menit</p>
+        </div>
+        <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
+          <p id="sec" class="text-black font-bold text-2xl"></p>
+          <p class="text-black font-semibold text-lg">Detik</p>
+        </div>
       </div>
     </div>
   </section>
+
+
+  <!-- App -->
+  <script src="_assets/js/app.js"></script>
 </body>
 </html>
