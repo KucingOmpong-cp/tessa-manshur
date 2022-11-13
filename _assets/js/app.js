@@ -22,3 +22,18 @@ let x = setInterval(function() {
   document.getElementById("min").innerHTML = minutes;
   document.getElementById("sec").innerHTML = seconds;
 }, 1000);
+
+// init Map
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: { lat: -6.864206, lng: 107.479917 },
+  });
+  const image =
+      "_assets/img/maps-marker.svg";
+  const beachMarker = new google.maps.Marker({
+      position: { lat: -6.864206, lng: 107.479917 },
+      map,
+      icon: image,
+  });
+}

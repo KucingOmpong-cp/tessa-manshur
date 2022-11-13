@@ -64,13 +64,14 @@
 
   <section id="story" class="py-8 px-4">
     <h2 class="mb-8 font-bold text-center">Our Story</h2>
+    
     <div class="flex flex-col items-center justify-center space-y-2">
       <div class="relative flex items-center justify-center h-8 w-full">
         <h5 class="text-right text-sm font-bold w-1/2 mr-8">04 - 02 - 2022</h5>
         <div class="absolute w-8 h-8 rounded-full bg-white"></div>
         <h5 class="text-left text-sm font-bold w-1/2 ml-8">Our First Meet</h5>
       </div>
-      <div class="relative flex items-start justify-center h-[210px] w-full">
+      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
         <div class="flex justify-end w-1/2 mr-8">
           <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
             <img src="_assets/img/story-1.jpeg" alt="" class="w-full">
@@ -84,7 +85,7 @@
         <div class="absolute w-8 h-8 rounded-full bg-white"></div>
         <h5 class="text-left text-sm font-bold w-1/2 ml-8">13 - 03 - 2022</h5>
       </div>
-      <div class="relative flex items-start justify-center h-[210px] w-full">
+      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
         <p class="text-right w-1/2 mr-8 text-[10px]">Pagi yang cerah menemani perjalanan kami kala itu. Ramainya stasiun dan perjalanan kami di kerata memberi kesan dan makna yang tak terlupakan. Tanpa kami sadari, perasaan nyaman tumbuh diantara kami dan membuat kami berdua yakin untuk memulai cerita dan perjalanan kami.</p>
         <div class="absolute w-1 h-full rounded bg-white"></div>
         <div class="w-1/2 ml-8">
@@ -98,19 +99,32 @@
         <div class="absolute w-8 h-8 rounded-full bg-white"></div>
         <h5 class="text-left text-sm font-bold w-1/2 ml-8">Engangement</h5>
       </div>
-      <div class="relative flex items-start justify-center h-[210px] w-full">
+      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
         <div class="flex justify-end w-1/2 mr-8">
           <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
             <img src="_assets/img/story-3.jpeg" alt="" class="w-full">
           </div>
         </div>
         <div class="absolute w-1 h-full rounded bg-white"></div>
-        <p class="text-left w-1/2 ml-8 text-[10px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <p class="text-left w-1/2 ml-8 text-[10px]"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
       </div>
       <div class="relative flex flex-col items-center justify-center rounded-full h-[120px] w-[120px] bg-white text-center space-y-1">
         <p class="text-black text-sm">Save The Date</p>
         <h5 class="font-bold text-black text-sm">Minggu</h5>
         <h5 class="font-bold text-black text-sm">12.02.2023</h5>
+      </div>
+    </div>
+
+    <div class="flex space-x-4 mt-6">
+      <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
+        <div class="w-8 h-8 bg-black rounded-full mb-2"></div>
+        <h4 class="my-2 text-black font-bold">Akad</h4>
+        <h4 class="text-black font-bold">08:00</h4>
+      </div>
+      <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
+        <div class="w-8 h-8 bg-black rounded-full mb-2"></div>
+        <h4 class="my-2 text-black font-bold">Resepsi</h4>
+        <h4 class="text-black font-bold">10:00 - 14:00</h4>
       </div>
     </div>
   </section>
@@ -139,11 +153,18 @@
     </div>
   </section>
 
-  <section id="maps" class="py-8 px-4">
+  <section id="maps" class="py-8 px-4 text-center">
     <h2 class="mb-8 font-bold text-center">Lokasi</h2>
 
+    <h3 class="font-semibold text-sm">Mason Pine Hotel, Kota Baru Parahyangan</h3>
+    <p class="text-sm mt-2">Jl. Parahyangan Raya No.Km, RW.8, Cipeundeuy, Kec. Padalarang, Kabupaten Bandung Barat, Jawa Barat 40553</p>
+
+    <div id="map" class="mt-4 w-full h-[212px] md:h-[550px]">
+    </div>
   </section>
 
+  <!-- Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2cAAhpiuZpOM7O9ljIqQR_mnOIyy9Smw&callback=initMap&libraries=&v=weekly" async></script>
   <!-- App -->
   <script src="_assets/js/app.js"></script>
 </body>
