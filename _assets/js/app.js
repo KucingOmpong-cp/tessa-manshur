@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+  getData();
+});
+
 const btn_play = document.querySelector('#btn-play');
 const audio = document.querySelector('#audio');
 
@@ -13,7 +17,7 @@ btn_play.addEventListener('click', function() {
 });
 
 // Mengatur waktu akhir perhitungan mundur
-let countDownDate = new Date("February 12, 2023 08:00:00").getTime();
+let countDownDate = new Date("December 03, 2023 08:00:00").getTime();
 
 // Memperbarui hitungan mundur setiap 1 detik
 let x = setInterval(function() {
@@ -41,13 +45,77 @@ let x = setInterval(function() {
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 15,
-      center: { lat: -6.864206, lng: 107.479917 },
+      center: { lat: -6.9162005, lng: 107.6106178 },
   });
   const image =
       "_assets/img/maps-marker.svg";
   const beachMarker = new google.maps.Marker({
-      position: { lat: -6.864206, lng: 107.479917 },
+      position: { lat: -6.9162005, lng: 107.6106178 },
       map,
       icon: image,
   });
 }
+
+let formMessage = document.getElementById('formMessage');
+const messageList = document.getElementById('messages')
+
+async function getData(){
+  const response = await fetch('https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec?sheetName=TessaManshur');
+  const data = await response.json();
+  length = data.length;
+  let content ='';
+
+  for(i=0;i<length;i++)
+  {
+      sort = length - (i+1);
+      const nama = data[sort].nama;
+      const pesan = data[sort].pesan;
+      content +=
+      `<div class="flex flex-col p-4 rounded-lg border border-black/75">
+        <h5 class="text-sm font-semibold mb-2">${ nama }</h5>
+        <p class="text-xs">${ pesan }</p>
+      </div>`
+  }
+
+  messageList.innerHTML = content;
+}
+
+async function postData(url = "", data = {}) {
+  const response = await fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  
+
+  console.log(response.response);
+  return response;
+}
+
+const inputNama = document.getElementById('nama');
+const inputPesan = document.getElementById('pesan');
+
+formMessage.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  let date = new Date();
+  let nama = inputNama.value;
+  let pesan = inputPesan.value;
+
+  let body = {
+    "sheetName": "TessaManshur",
+    date,
+    nama,
+    pesan,
+  };
+
+  postData('https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec', body).then((data) => {
+    inputNama.value = '';
+    inputPesan.value = '';
+
+    getData();
+  }).catch(error => console.error('Error:', error));
+});

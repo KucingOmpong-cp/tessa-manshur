@@ -7,141 +7,160 @@
   <title>Tessa & Manshur</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        container: {
+          center: true,
+        },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1110px',
+        },
+      }
+    }
+  </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <!-- App -->
   <link rel="stylesheet" href="_assets/css/app.css">
 </head>
-<body class="bg-[#261501]">
-  <header class="relative w-screen h-screen flex flex-col items-center justify-center px-4 bg-cover bg-no-repeat bg-center bg-[url('_assets/img/cover.jpeg')] lg:bg-[url('_assets/img/big-cover.jpeg')] after:absolute after:inset-0 after:bg-[#000000B2]">
-    <div class="relative flex items-center justify-center z-50">
-      <img src="_assets/img/top-accent.svg" alt="">
-      <div class="absolute flex flex-col space-y-2 text-center">
-        <p class="pb-2">Wedding</p>
-        <h1 class="name text-2xl">
-          Alecia Tessa Putri
-        </h1>
-        <h2 class="name text-3xl pt-1">&</h2>
-        <h1 class="name text-2xl">
-          Muhammad Manshur
-        </h1>
-        <p class="pt-2">12.02.2023</p>
+<body class="bg-[#FFD9B7]">
+  <header class="relative w-full h-screen flex flex-col items-center justify-center px-4 bg-cover bg-no-repeat bg-center bg-[url('_assets/img/cover.jpeg')] lg:bg-[url('_assets/img/big-cover.jpeg')] after:absolute after:inset-0 after:bg-[#000000B2] after:z-20">
+    <div class="container relative z-40 flex flex-col items-center">
+      <div class="flex items-center justify-center">
+        <img src="_assets/img/top-accent.svg" alt="">
+        <div class="absolute flex flex-col space-y-2 text-center">
+          <p class="pb-2 text-white">Wedding</p>
+          <h1 class="name text-2xl text-white">
+            Alecia Tessa Putri
+          </h1>
+          <h2 class="name text-3xl pt-1 text-white">&</h2>
+          <h1 class="name text-2xl text-white">
+            Muhammad Manshur
+          </h1>
+          <p class="pt-2 text-white">03.12.2023</p>
+        </div>
       </div>
-    </div>
-    <div class="rounded bg-white/75 w-full p-2 text-center mt-12 z-50">
-      <p class="text-xs mb-2 text-black">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.”</p>
-      <h5 class="text-sm font-bold text-black">(Ar-Rum: 21)</h5>
+      <div class="rounded bg-white/75 w-full max-w-[550px] p-2 text-center mt-12 z-50">
+        <p class="text-xs mb-2 text-black lg:text-sm">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.”</p>
+        <h5 class="text-sm font-bold text-black lg:text-base">(Ar-Rum: 21)</h5>
+      </div>
     </div>
   </header>
 
   <section id="a" class="py-8 px-4">
-    <div class="flex items-start">
-      <div class="flex flex-col items-center justify-center text-center w-1/2 space-y-2">
-        <div class="w-[100px] h-[100px] bg-white rounded-full overflow-hidden">
+    <div class="container grid grid-cols-2">
+      <div class="flex flex-col items-center justify-center text-center space-y-2">
+        <div class="w-[100px] h-[100px] bg-white rounded-full overflow-hidden lg:w-[140px] lg:h-[140px]">
           <img src="_assets/img/woman.jpeg" alt="" class="w-full">
         </div>
-        <h3 class="font-bold text-sm">
+        <h3 class="font-bold text-sm lg:text-lg">
           Alecia Tessa Putri
         </h3>
-        <p class="text-xs">Putri ke 1</p>
-        <h4 class="font-semibold text-xs">Bpk. Awan Surya Dharmawan</h4>
-        <h4 class="font-semibold text-xs">Ibu Lucia Wiandanie</h4>
+        <p class="text-xs lg:text-base">Putri ke 1</p>
+        <h4 class="font-semibold text-xs lg:text-base">Bpk. Awan Surya Dharmawan</h4>
+        <h4 class="font-semibold text-xs lg:text-base">Ibu Lucia Wiandanie</h4>
       </div>
-      <div class="flex flex-col items-center justify-center text-center w-1/2 space-y-2">
-        <div class="w-[100px] h-[100px] bg-white rounded-full overflow-hidden">
+      <div class="flex flex-col items-center justify-center text-center space-y-2">
+        <div class="w-[100px] h-[100px] bg-white rounded-full overflow-hidden lg:w-[140px] lg:h-[140px]">
           <img src="_assets/img/man.jpeg" alt="" class="w-full">
         </div>
-        <h3 class="font-bold text-sm">
+        <h3 class="font-bold text-sm lg:text-lg">
           Muhammad Manshur
         </h3>
-        <p class="text-xs">Putra ke 1</p>
-        <h4 class="font-semibold text-xs">Bpk. Ade M Syarifudin</h4>
-        <h4 class="font-semibold text-xs">Ibu Siti Asiyah</h4>
+        <p class="text-xs lg:text-base">Putra ke 1</p>
+        <h4 class="font-semibold text-xs lg:text-base">Bpk. Ade M Syarifudin</h4>
+        <h4 class="font-semibold text-xs lg:text-base">Ibu Siti Asiyah</h4>
       </div>
     </div>
   </section>
 
   <section id="story" class="py-8 px-4">
-    <h2 class="mb-8 font-bold text-center">Our Story</h2>
-    
-    <div class="flex flex-col items-center justify-center space-y-2">
-      <div class="relative flex items-center justify-center h-8 w-full">
-        <h5 class="text-right text-sm font-bold w-1/2 mr-8">04 - 02 - 2022</h5>
-        <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white">
-          <img src="_assets/img/icon/bubble-chat.svg" alt="" class="w-4 h-4">
+    <div class="container">
+      <h2 class="mb-8 font-bold text-center lg:text-xl">Our Story</h2>
+      
+      <div class="flex flex-col items-center justify-center space-y-2">
+        <div class="relative flex items-center justify-center h-8 w-full">
+          <h5 class="text-right text-sm font-bold w-1/2 mr-8 lg:text-base">04 - 02 - 2022</h5>
+          <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white lg:w-10 lg:h-10">
+            <img src="_assets/img/icon/bubble-chat.svg" alt="" class="w-4 h-4 lg:w-6 lg:h-6">
+          </div>
+          <h5 class="text-left text-sm font-bold w-1/2 ml-8 lg:text-base">Our First Meet</h5>
         </div>
-        <h5 class="text-left text-sm font-bold w-1/2 ml-8">Our First Meet</h5>
-      </div>
-      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
-        <div class="flex justify-end w-1/2 mr-8">
-          <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
-            <img src="_assets/img/story-1.jpeg" alt="" class="w-full">
+        <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
+          <div class="flex justify-end w-1/2 mr-8 lg:text-base">
+            <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
+              <img src="_assets/img/story-1.jpeg" alt="" class="w-full">
+            </div>
+          </div>
+          <div class="absolute w-1 h-full rounded bg-white"></div>
+          <p class="text-left w-1/2 ml-8 text-[10px] lg:text-base">Berawal dari secangkir kopi yang membuat pertemuan kami menjadi sebuah cerita yang hangat. Cerita yang membuat kami saling mengenal dan memahami satu sama lain.</p>
+        </div>
+        <div class="relative flex items-center justify-center h-8 w-full">
+          <h5 class="text-right text-sm font-bold w-1/2 mr-8 lg:text-base">Trip To Next Step</h5>
+          <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white lg:w-10 lg:h-10">
+            <img src="_assets/img/icon/love-arrow.svg" alt="" class="w-4 h-4 lg:w-6 lg:h-6">
+          </div>
+          <h5 class="text-left text-sm font-bold w-1/2 ml-8 lg:text-base">13 - 03 - 2022</h5>
+        </div>
+        <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
+          <p class="text-right w-1/2 mr-8 text-[10px] lg:text-base">Pagi yang cerah menemani perjalanan kami kala itu. Ramainya stasiun dan perjalanan kami di kerata memberi kesan dan makna yang tak terlupakan. Tanpa kami sadari, perasaan nyaman tumbuh diantara kami dan membuat kami berdua yakin untuk memulai cerita dan perjalanan kami.</p>
+          <div class="absolute w-1 h-full rounded bg-white"></div>
+          <div class="w-1/2 ml-8 lg:text-base">
+            <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
+              <img src="_assets/img/story-2.jpeg" alt="" class="w-full">
+            </div>
           </div>
         </div>
-        <div class="absolute w-1 h-full rounded bg-white"></div>
-        <p class="text-left w-1/2 ml-8 text-[10px]">Berawal dari secangkir kopi yang membuat pertemuan kami menjadi sebuah cerita yang hangat. Cerita yang membuat kami saling mengenal dan memahami satu sama lain.</p>
-      </div>
-      <div class="relative flex items-center justify-center h-8 w-full">
-        <h5 class="text-right text-sm font-bold w-1/2 mr-8">Trip To Next Step</h5>
-        <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white">
-          <img src="_assets/img/icon/love-arrow.svg" alt="" class="w-4 h-4">
-        </div>
-        <h5 class="text-left text-sm font-bold w-1/2 ml-8">13 - 03 - 2022</h5>
-      </div>
-      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
-        <p class="text-right w-1/2 mr-8 text-[10px]">Pagi yang cerah menemani perjalanan kami kala itu. Ramainya stasiun dan perjalanan kami di kerata memberi kesan dan makna yang tak terlupakan. Tanpa kami sadari, perasaan nyaman tumbuh diantara kami dan membuat kami berdua yakin untuk memulai cerita dan perjalanan kami.</p>
-        <div class="absolute w-1 h-full rounded bg-white"></div>
-        <div class="w-1/2 ml-8">
-          <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
-            <img src="_assets/img/story-2.jpeg" alt="" class="w-full">
+        <div class="relative flex items-center justify-center h-8 w-full">
+          <h5 class="text-right text-sm font-bold w-1/2 mr-8 lg:text-base">11 - 09 - 2022</h5>
+          <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white lg:w-10 lg:h-10">
+            <img src="_assets/img/icon/ring-box.svg" alt="" class="w-4 h-4 lg:w-6 lg:h-6">
           </div>
+          <h5 class="text-left text-sm font-bold w-1/2 ml-8 lg:text-base">Engangement</h5>
         </div>
-      </div>
-      <div class="relative flex items-center justify-center h-8 w-full">
-        <h5 class="text-right text-sm font-bold w-1/2 mr-8">11 - 09 - 2022</h5>
-        <div class="absolute flex items-center justify-center w-8 h-8 rounded-full bg-white">
-          <img src="_assets/img/icon/ring-box.svg" alt="" class="w-4 h-4">
-        </div>
-        <h5 class="text-left text-sm font-bold w-1/2 ml-8">Engangement</h5>
-      </div>
-      <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
-        <div class="flex justify-end w-1/2 mr-8">
-          <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
-            <img src="_assets/img/story-3.jpeg" alt="" class="w-full">
+        <div class="relative flex items-start justify-center min-h-[120px] max-h-[230px] w-full">
+          <div class="flex justify-end w-1/2 mr-8 lg:text-base">
+            <div class="text-right max-h-[108px] max-w-[166px] rounded overflow-hidden">
+              <img src="_assets/img/story-3.jpeg" alt="" class="w-full">
+            </div>
           </div>
+          <div class="absolute w-1 h-full rounded bg-white"></div>
+          <p class="text-left w-1/2 ml-8 text-[10px] lg:text-base">Hari yang dinantikan pun tiba. Hari di mana kami yakin untuk melangkah. Dari Kau dan Aku, menjadi KITA. Dengan mengharap ridho Allah SWT. serta izin dari kedua orang tua kami, kami siap untuk mengikat cinta kami dalam ikatan suci pernikahan.</p>
         </div>
-        <div class="absolute w-1 h-full rounded bg-white"></div>
-        <p class="text-left w-1/2 ml-8 text-[10px]">Hari yang dinantikan pun tiba. Hari di mana kami yakin untuk melangkah. Dari Kau dan Aku, menjadi KITA. Dengan mengharap ridho Allah SWT. serta izin dari kedua orang tua kami, kami siap untuk mengikat cinta kami dalam ikatan suci pernikahan.</p>
-      </div>
-      <div class="relative flex flex-col items-center justify-center rounded-full h-[120px] w-[120px] bg-white text-center space-y-1">
-        <p class="text-black text-sm">Save The Date</p>
-        <h5 class="font-bold text-black text-sm">Minggu</h5>
-        <h5 class="font-bold text-black text-sm">12.02.2023</h5>
-      </div>
-    </div>
-
-    <div class="flex space-x-4 mt-6">
-      <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
-        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 mb-2">
-          <img src="_assets/img/icon/double-ring.svg" alt="" class="w-5 h-5">
+        <div class="relative flex flex-col items-center justify-center rounded-full h-[120px] w-[120px] bg-white text-center space-y-1">
+          <p class="text-black text-sm">Save The Date</p>
+          <h5 class="font-bold text-black text-sm">Minggu</h5>
+          <h5 class="font-bold text-black text-sm">03.12.2023</h5>
         </div>
-        <h4 class="my-2 text-black font-bold">Akad</h4>
-        <h4 class="text-black font-bold">08:00</h4>
       </div>
-      <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
-        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 mb-2">
-          <img src="_assets/img/icon/stage.svg" alt="" class="w-5 h-5">
+  
+      <div class="flex space-x-4 mt-6">
+        <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 mb-2">
+            <img src="_assets/img/icon/double-ring.svg" alt="" class="w-5 h-5">
+          </div>
+          <h4 class="my-2 text-black font-bold">Akad</h4>
+          <h4 class="text-black font-bold">08:00</h4>
         </div>
-        <h4 class="my-2 text-black font-bold">Resepsi</h4>
-        <h4 class="text-black font-bold">10:00 - 14:00</h4>
+        <div class="flex flex-col items-center justify-center flex-1 p-4 bg-white rounded-lg">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 mb-2">
+            <img src="_assets/img/icon/stage.svg" alt="" class="w-5 h-5">
+          </div>
+          <h4 class="my-2 text-black font-bold">Resepsi</h4>
+          <h4 class="text-black font-bold">11:00 - 14:00</h4>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="time" class="py-8 px-4 bg-black/75">
-    <div id="countdown">
-      <h2 class="mb-8 font-bold text-center">Menuju Akad Nikah</h2>
+    <div class="container" id="countdown">
+      <h2 class="mb-8 font-bold text-center text-white">Menuju Akad Nikah</h2>
       <div class="flex space-x-4">
         <div class="flex flex-1 bg-white rounded text-center py-2 items-center justify-center flex-col">
           <p id="day" class="text-black font-bold text-2xl"></p>
@@ -164,43 +183,49 @@
   </section>
 
   <section id="maps" class="py-8 px-4 text-center">
-    <h2 class="mb-8 font-bold text-center">Lokasi</h2>
-
-    <h3 class="font-semibold text-sm">Mason Pine Hotel, Kota Baru Parahyangan</h3>
-    <p class="text-sm mt-2">Jl. Parahyangan Raya No.Km, RW.8, Cipeundeuy, Kec. Padalarang, Kabupaten Bandung Barat, Jawa Barat 40553</p>
-
-    <div id="map" class="mt-4 w-full h-[212px] md:h-[550px]">
+    <div class="container">
+      <h2 class="mb-8 font-bold text-center">Lokasi</h2>
+  
+      <h3 class="font-semibold text-sm">eL Royale Hotel Bandung, Braga</h3>
+      <p class="text-sm mt-2">Jl. Merdeka No.2, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111</p>
+  
+      <div id="map" class="mt-4 w-full h-[212px] md:h-[550px]">
+      </div>
+  
+      <a 
+        href="https://maps.app.goo.gl/42NLCxkpY1T9nZx27" 
+        class="flex items-center justify-center py-2 px-6 mt-4 w-full bg-black/75 text-white rounded-lg font-semibold"
+        target="_blank"
+      >
+        <img src="_assets/img/icon/location.svg" alt="" class="h-5 w-5 mr-2">
+        Lihat Arah Lokasi
+      </a>
     </div>
-
-    <a 
-      href="https://www.google.com/maps/place/Mason+Pine+Hotel,+Kota+Baru+Parahyangan/@-6.864206,107.4777283,17z/data=!3m1!4b1!4m8!3m7!1s0x2e68e4b32c5e15d7:0xebd0dc3bfc0de869!5m2!4m1!1i2!8m2!3d-6.864206!4d107.479917" 
-      class="flex items-center justify-center py-2 px-6 mt-4 w-full bg-[#AA9138] rounded-lg font-semibold"
-      target="_blank"
-    >
-      <img src="_assets/img/icon/location.svg" alt="" class="h-5 w-5 mr-2">
-      Lihat Arah Lokasi
-    </a>
   </section>
 
   <section id="message" class="py-8 px-4">
-    <h2 class="mb-8 font-bold text-center">Ucapan & Do’a</h2>
-
-    <div class="flex flex-col py-4 px-2 border border-white mb-8">
-      <label for="nama" class="text-sm font-bold mb-2">Nama</label>
-      <input type="text" id="nama" class="mb-4 text-sm p-2 bg-black/25 border border-white rounded placeholder:text-[#8E8E8E]" placeholder="Tulis Namamu...">
-      <label for="pesan" class="text-sm font-bold mb-2">Pesan</label>
-      <textarea id="pesan" class="mb-6 text-sm p-2 bg-black/25 border border-white rounded placeholder:text-[#8E8E8E]" placeholder="Tulis Pesanmu..."></textarea>
-
-      <button class="flex items-center justify-center py-2 px-6 w-full bg-[#AA9138] rounded-lg font-semibold">
-        <img src="_assets/img/icon/send-envelope.svg" alt="" class="h-5 w-5 mr-2">
-        Kirim Ucapan
-      </button>
-    </div>
-
-    <div id="messages">
-      <div class="flex flex-col p-4 rounded-lg border border-white">
-        <h5 class="text-sm font-semibold mb-2">Levin</h5>
-        <p class="text-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sy</p>
+    <div class="container">
+      <h2 class="mb-8 font-bold text-center">Ucapan & Do’a</h2>
+  
+      <form id="formMessage" action="POST" class="flex flex-col py-4 px-2 border border-black/75 mb-8">
+        <label for="nama" class="text-sm font-bold mb-2">Nama</label>
+        <input 
+          type="text" 
+          id="nama" 
+          class="mb-4 text-sm p-2 bg-transparent border border-black/75 rounded placeholder:text-[#8E8E8E]" 
+          placeholder="Tulis Namamu..."
+          autocomplete="off"
+        >
+        <label for="pesan" class="text-sm font-bold mb-2">Pesan</label>
+        <textarea id="pesan" class="mb-6 text-sm p-2 bg-transparent border border-black/75 rounded placeholder:text-[#8E8E8E]" placeholder="Tulis Pesanmu..."></textarea>
+  
+        <button type="submit" class="flex items-center justify-center py-2 px-6 w-full bg-black/75 text-white rounded-lg font-semibold">
+          <img src="_assets/img/icon/send-envelope.svg" alt="" class="h-5 w-5 mr-2">
+          Kirim Ucapan
+        </button>
+      </form>
+  
+      <div id="messages" class="flex flex-col gap-3">
       </div>
     </div>
   </section>
