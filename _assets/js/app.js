@@ -59,6 +59,25 @@ function initMap() {
 let formMessage = document.getElementById('formMessage');
 const messageList = document.getElementById('messages')
 
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return (
+    [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join('-') +
+    ' ' +
+    [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getMinutes()),
+    ].join(':')
+  );
+}
+
 async function getData(){
   const response = await fetch('https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec?sheetName=TessaManshur');
   const data = await response.json();
@@ -70,9 +89,16 @@ async function getData(){
       sort = length - (i+1);
       const nama = data[sort].nama;
       const pesan = data[sort].pesan;
+      const date = data[sort].date;
+
+      const dateStr = formatDate(new Date(date))
+      
       content +=
       `<div class="flex flex-col p-4 rounded-lg border border-black/75">
-        <h5 class="text-sm font-semibold mb-2">${ nama }</h5>
+        <div class="flex justify-between">
+          <h5 class="text-sm font-semibold mb-2">${ nama }</h5>
+          <h5 class="text-sm font-semibold mb-2">${ dateStr }</h5>
+        </div
         <p class="text-xs">${ pesan }</p>
       </div>`
   }
@@ -119,3 +145,22 @@ formMessage.addEventListener('submit', function (e) {
     getData();
   }).catch(error => console.error('Error:', error));
 });
+
+const popup = document.getElementById("show-image");
+
+function toggleModalImage(url) {
+  if (popup.classList.contains('flex')) {
+    popup.classList.remove('flex');
+    popup.classList.add('hidden');
+  } else if (popup.classList.contains('hidden')) {
+    popup.classList.remove('hidden');
+    popup.classList.add('flex');
+  }
+
+  if (url !== undefined) {
+    document.getElementById('image-pop').innerHTML = `<img
+    alt="gallery"
+    class="block h-full w-full rounded-lg object-cover object-center"
+    src=${url} />`
+  }
+}
