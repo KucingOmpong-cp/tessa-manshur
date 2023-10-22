@@ -259,7 +259,7 @@
     <div class="container">
       <h2 class="mb-8 font-bold text-center lg:text-xl">Ucapan & Do’a</h2>
   
-      <form id="formMessage" action="POST" class="flex flex-col gap-4 py-4 px-2 border border-black/75 mb-8 lg:gap-6 lg:py-8 lg:px-6">
+      <form id="formMessage" action="POST" class="flex flex-col gap-4 py-4 px-2 border border-black/75 mb-8 bg-white/50 rounded-lg lg:gap-6 lg:py-8 lg:px-6">
         <div class="flex flex-col gap-2">
           <label for="nama" class="text-sm font-bold lg:text-base">Nama</label>
           <input 
@@ -276,18 +276,24 @@
           <textarea id="pesan" class="text-sm p-2 bg-transparent border border-black/75 rounded placeholder:text-[#8E8E8E] lg:text-base" placeholder="Tulis Pesanmu..."></textarea>
         </div>
   
-        <button type="submit" class="flex items-center justify-center gap-2 py-2 px-6 w-full bg-black/75 rounded-lg text-sm font-semibold lg:text-base">
+        <button id="btnMessage" type="submit" class="flex items-center justify-center gap-2 py-2 px-6 w-full bg-black/75 rounded-lg text-sm font-semibold lg:text-base disabled:bg-gray-500">
           <img src="_assets/img/icon/send-envelope.svg" alt="" class="h-5 w-5">
           <span class="text-white">Kirim Ucapan</span>
         </button>
       </form>
   
+      <div id="send-loading" class="hidden items-center justify-center">
+        <img src="_assets/img/send-loading.gif" alt="" class="h-[150px] w-[150px]">
+      </div>
+
       <div id="messages" class="flex flex-col gap-3">
       </div>
     </div>
   </section>
   
-  <section id="protocol" class="py-8 px-4 lg:py-14 text-center"></section>
+  <footer class="py-6 bg-black/90">
+    <p class="w-full text-white text-center text-base font-bold leading-normal">© Copyright 2023 Manshur</p>
+  </footer>
 
   <div id="show-image" class="fixed top-0 left-0 hidden w-screen h-screen flex-col gap-3 items-center justify-center bg-black/75" onclick="toggleModalImage()">
     <div id="image-pop" class="max-w-[80%] max-h-[80%]">

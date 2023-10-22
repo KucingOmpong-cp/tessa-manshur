@@ -57,7 +57,9 @@ function initMap() {
 }
 
 let formMessage = document.getElementById('formMessage');
-const messageList = document.getElementById('messages')
+const btnMessage = document.getElementById('btnMessage');
+const sendLoading = document.getElementById('send-loading');
+const messageList = document.getElementById('messages');
 
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
@@ -94,7 +96,7 @@ async function getData(){
       const dateStr = formatDate(new Date(date))
       
       content +=
-      `<div class="flex flex-col p-4 rounded-lg border border-black/75">
+      `<div class="flex flex-col p-4 rounded-lg border border-black/75 bg-white/50">
         <div class="flex justify-between">
           <h5 class="text-sm font-semibold mb-2">${ nama }</h5>
           <h5 class="text-sm font-semibold mb-2">${ dateStr }</h5>
@@ -126,21 +128,28 @@ const inputPesan = document.getElementById('pesan');
 
 formMessage.addEventListener('submit', function (e) {
   e.preventDefault();
-
+  
   let date = new Date();
   let nama = inputNama.value;
   let pesan = inputPesan.value;
-
+  
   let body = {
     "sheetName": "TessaManshur",
     date,
     nama,
     pesan,
   };
-
+  
+  btnMessage.setAttribute('disabled', 'true');
+  sendLoading.classList.remove('hidden')
+  sendLoading.classList.add('flex')
+  
   postData('https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec', body).then((data) => {
     inputNama.value = '';
     inputPesan.value = '';
+    btnMessage.removeAttribute('disabled');
+    sendLoading.classList.remove('flex')
+    sendLoading.classList.add('hidden')
 
     getData();
   }).catch(error => console.error('Error:', error));
