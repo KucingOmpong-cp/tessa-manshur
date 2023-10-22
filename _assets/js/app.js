@@ -1,11 +1,34 @@
+var url = new URL(window.location.href);
+var to = url.searchParams.get("to");
+var count = url.searchParams.get("count");
+if (to==null || to=="") {
+    document.getElementById('guest').innerHTML = "Guest";
+} else {
+    document.getElementById('guest').innerHTML = to;
+}
+
+if (count==null || count=="") {
+    document.getElementById('guestCount').innerHTML = "";
+} else {
+    document.getElementById('guestCount').innerHTML = `Undangan hanya berlaku untuk ${count} orang`;
+}
+
+const btnOpen = document.querySelector('#btnOpen');
+const invitationCover = document.querySelector('#invitationCover');
+const weddingBody = document.querySelector('#wedding-body');
+const btn_play = document.querySelector('#btn-play');
+const audio = document.querySelector('#audio');
+
 document.addEventListener('DOMContentLoaded', function() {
   getData();
 });
 
-const btn_play = document.querySelector('#btn-play');
-const audio = document.querySelector('#audio');
+btnOpen.addEventListener('click', function() {
+  invitationCover.classList.add('-top-full')
+  weddingBody.classList.remove('hidden');
+  audio.play();
+});
 
-audio.play();
 btn_play.addEventListener('click', function() {
   if (audio.paused) {
     audio.play();
