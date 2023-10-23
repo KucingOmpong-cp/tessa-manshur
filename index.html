@@ -22,6 +22,7 @@
       }
     }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -92,8 +93,9 @@
     <section id="a" class="py-8 px-4 lg:py-14">
       <div class="container grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div class="flex flex-col items-center justify-center text-center space-y-2">
-          <div class="w-[150px] h-[150px] bg-white rounded-full overflow-hidden">
-            <img src="_assets/img/woman.jpeg" alt="" class="w-full">
+          <div class="relative flex justify-center items-center">
+            <img src="_assets/img/woman.jpeg" alt="" class="relative w-[150px] h-[150px] object-cover object-center rounded-full z-[3]">
+            <div id="icon-test" class="absolute w-[200%] z-[2]"></div>
           </div>
           <h3 class="font-bold text-base lg:text-xl">
             Alecia Tessa Putri
@@ -104,8 +106,8 @@
         </div>
         
         <div class="flex flex-col items-center justify-center text-center space-y-2">
-          <div class="w-[150px] h-[150px] bg-white rounded-full overflow-hidden">
-            <img src="_assets/img/man.jpeg" alt="" class="w-full">
+          <div class="">
+            <img src="_assets/img/man.jpeg" alt="" class="w-[150px] h-[150px] object-cover object-center rounded-full">
           </div>
           <h3 class="font-bold text-base lg:text-xl">
             Muhammad Manshur
@@ -291,8 +293,9 @@
   
     <section id="message" class="py-8 px-4 lg:py-14">
       <div class="container">
-        <h2 class="mb-8 font-bold text-center lg:text-xl">Ucapan & Do’a</h2>
+        <h2 class="-mb-8 font-bold text-center lg:text-xl">Ucapan & Do’a</h2>
     
+        <div id="icon-container" class="-mb-[66px]"></div>
         <form id="formMessage" action="POST" class="flex flex-col gap-4 py-4 px-2 border border-black/75 mb-8 bg-white/50 rounded-lg lg:gap-6 lg:py-8 lg:px-6">
           <div class="flex flex-col gap-2">
             <label for="nama" class="text-sm font-bold lg:text-base">Nama</label>
@@ -350,5 +353,26 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMazD4MYY5F0xgv9uFuS8DM1I2FlKMRH4&callback=initMap&libraries=&v=weekly" async></script>
   <!-- App -->
   <script src="_assets/js/app.js"></script>
+
+  <script>
+    var animation = bodymovin.loadAnimation({
+      // animationData: { /* ... */ },
+      container: document.getElementById('icon-container'), // required
+      path: 'https://lottie.host/e6803328-1732-4cbe-8da7-4747dbf31263/zsAAl5mYfa.json', // required
+      renderer: 'svg', // required
+      loop: true, // optional
+      autoplay: true, // optional
+      name: "Demo Animation", // optional
+    });
+    var animation2 = bodymovin.loadAnimation ({
+      // animationData: { /* ... */ },
+      container: document.getElementById('icon-test'), // required
+      path: 'https://lottie.host/bbd93f95-6e18-4c06-86ad-2eb01dcb2a7f/xMYhnAhWdW.json', // required
+      renderer: 'svg', // required
+      loop: true, // optional
+      autoplay: true, // optional
+      name: "Demo Animation2", // optional
+    });
+  </script>
 </body>
 </html>
