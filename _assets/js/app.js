@@ -21,10 +21,39 @@ const audio = document.querySelector('#audio');
 
 document.addEventListener('DOMContentLoaded', function() {
   getData();
+
+
+
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById('icon-container'),
+    path: 'https://lottie.host/e6803328-1732-4cbe-8da7-4747dbf31263/zsAAl5mYfa.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    name: "Demo Animation",
+  });
+
+  var animation2 = bodymovin.loadAnimation ({
+    container: document.getElementById('ornament1'),
+    path: 'https://lottie.host/bbd93f95-6e18-4c06-86ad-2eb01dcb2a7f/xMYhnAhWdW.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    name: "Demo Animation2",
+  });
+
+  var animation3 = bodymovin.loadAnimation ({
+    container: document.getElementById('ornament2'),
+    path: 'https://lottie.host/bbd93f95-6e18-4c06-86ad-2eb01dcb2a7f/xMYhnAhWdW.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    name: "Demo Animation2",
+  });
 });
 
 btnOpen.addEventListener('click', function() {
-  invitationCover.classList.add('-top-full')
+  invitationCover.classList.add('-top-[105vh]')
   weddingBody.classList.remove('hidden');
   audio.play();
 });
