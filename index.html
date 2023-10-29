@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="_assets/img/icon/favicon-16x16.png" sizes="16x16"/>
+  <link rel="icon" type="image/png" href="_assets/img/icon/favicon-32x32.png" sizes="16x16"/>
+
   <title>Tessa & Manshur</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,6 +23,11 @@
           md: '768px',
           lg: '1024px',
           xl: '1110px',
+        },
+        extend: {
+          backgroundImage: {
+            'gradient-leveling': 'linear-gradient(180deg, rgba(255,217,183,1) 0%, rgba(255,217,183,0.9) 25%, rgba(255,217,183,0) 100%)',
+          }
         },
       }
     }
@@ -94,7 +104,7 @@
       <div class="container grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div class="flex flex-col items-center justify-center text-center space-y-2">
           <div class="relative flex justify-center items-center">
-            <img src="_assets/img/woman.jpeg" alt="" class="relative w-[150px] h-[150px] object-cover object-center rounded-full z-[3]">
+            <img src="_assets/img/woman.jpeg" alt="" class="relative w-[150px] h-[150px] object-cover object-center rounded-full z-[3] lg:w-[200px] lg:h-[200px]">
             <div id="ornament1" class="absolute w-[200%] z-[2]"></div>
           </div>
           <h3 class="font-bold text-base lg:text-xl">
@@ -107,7 +117,7 @@
         
         <div class="flex flex-col items-center justify-center text-center space-y-2">
           <div class="relative flex justify-center items-center">
-            <img src="_assets/img/man.jpeg" alt="" class="relative w-[150px] h-[150px] object-cover object-center rounded-full z-[3]">
+            <img src="_assets/img/man.jpeg" alt="" class="relative w-[150px] h-[150px] object-cover object-center rounded-full z-[3] lg:w-[200px] lg:h-[200px]">
             <div id="ornament2" class="absolute w-[200%] z-[2]"></div>
           </div>
           <h3 class="font-bold text-base lg:text-xl">
@@ -173,10 +183,14 @@
             <div class="absolute w-1 h-full rounded bg-white"></div>
             <p class="text-left w-1/2 ml-8 text-xs lg:text-base">Hari yang dinantikan pun tiba. Hari di mana kami yakin untuk melangkah. Dari Kau dan Aku, menjadi KITA. Dengan mengharap ridho Allah SWT. serta izin dari kedua orang tua kami, kami siap untuk mengikat cinta kami dalam ikatan suci pernikahan.</p>
           </div>
-          <div class="relative flex flex-col items-center justify-center rounded-full h-[120px] w-[120px] bg-white text-center space-y-1">
-            <p class="text-black text-sm">Save The Date</p>
-            <h5 class="font-bold text-black text-sm">Minggu</h5>
-            <h5 class="font-bold text-black text-sm">03.12.2023</h5>
+          <div class="relative flex justify-center items-center">
+            <div id="ornament3" class="absolute w-[200%] z-[2]"></div>
+            
+            <div class="relative flex flex-col items-center justify-center rounded-full h-[120px] w-[120px] bg-white text-center space-y-1 z-[3]">
+              <p class="text-black text-sm">Save The Date</p>
+              <h5 class="font-bold text-black text-sm">Minggu</h5>
+              <h5 class="font-bold text-black text-sm">03.12.2023</h5>
+            </div>
           </div>
         </div>
 
@@ -326,8 +340,24 @@
           <img src="_assets/img/send-loading.gif" alt="" class="h-[150px] w-[150px]">
         </div>
   
-        <div id="messages" class="flex flex-col gap-3">
+        <div class="flex flex-col gap-3">
+          <div id="messages" class="flex flex-col gap-3">
+          </div>
+  
+          <div id="pagination" class="flex justify-center gap-3">
+            <button type="button" id="previousButton" class="py-2 px-3 rounded-lg bg-white disabled:bg-[#DDDDDD]">prev</button>
+            <button type="button" id="nextButton" class="py-2 px-3 rounded-lg bg-white disabled:bg-[#DDDDDD]">next</button>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="relative w-full h-screen flex flex-col items-center justify-center px-4 bg-cover bg-no-repeat bg-center bg-[url('_assets/img/cover.jpeg')] lg:bg-[url('_assets/img/big-cover.jpeg')] after:absolute after:-top-0.5 after:w-screen after:h-full after:bg-gradient-leveling after:z-20">
+      <div class="container relative z-30 flex flex-col justify-center items-center text-center gap-4">
+        <p class="max-w-[500px]">Merupakan suatu kehormatan dan kebahagiaan kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan do’a restu kepada kami. Terima kasih.</p>
+        <p class="">Kami yang Berbahagia,</p>
+
+        <img src="_assets/img/logo.png" alt="" class="w-[250px] h-[250px] object-cover object-center">
       </div>
     </section>
     

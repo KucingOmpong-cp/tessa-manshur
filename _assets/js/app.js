@@ -19,10 +19,19 @@ const weddingBody = document.querySelector('#wedding-body');
 const btn_play = document.querySelector('#btn-play');
 const audio = document.querySelector('#audio');
 
+const itemsPerPage = 10;
+let currentPage = 1;
+let data;
+
+let formMessage = document.getElementById('formMessage');
+const btnMessage = document.getElementById('btnMessage');
+const sendLoading = document.getElementById('send-loading');
+const messageList = document.getElementById('messages');
+const previousButton = document.getElementById('previousButton');
+const nextButton = document.getElementById('nextButton');
+
 document.addEventListener('DOMContentLoaded', function() {
-  getData();
-
-
+  getData(currentPage);
 
   var animation = bodymovin.loadAnimation({
     container: document.getElementById('icon-container'),
@@ -45,6 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var animation3 = bodymovin.loadAnimation ({
     container: document.getElementById('ornament2'),
     path: 'https://lottie.host/bbd93f95-6e18-4c06-86ad-2eb01dcb2a7f/xMYhnAhWdW.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    name: "Demo Animation2",
+  });
+
+  var animation4 = bodymovin.loadAnimation ({
+    container: document.getElementById('ornament3'),
+    path: 'https://lottie.host/7519f16c-7df6-4985-8be1-3f7967f3b05a/1lTdbPgPA2.json',
     renderer: 'svg',
     loop: true,
     autoplay: true,
@@ -108,11 +126,6 @@ function initMap() {
   });
 }
 
-let formMessage = document.getElementById('formMessage');
-const btnMessage = document.getElementById('btnMessage');
-const sendLoading = document.getElementById('send-loading');
-const messageList = document.getElementById('messages');
-
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
@@ -132,32 +145,57 @@ function formatDate(date) {
   );
 }
 
-async function getData(){
-  const response = await fetch('https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec?sheetName=TessaManshur');
-  const data = await response.json();
-  length = data.length;
-  let content ='';
+async function getData(page) {
+  const response = await fetch(
+    'https://script.google.com/macros/s/AKfycbzanfx7b3rMDB1gd91egaMtr8fVTqchoGQsz684ANugqamuXfY-bEHgd1kLYyb4KUyB/exec?sheetName=TessaManshur'
+  );
+  data = await response.json();
+  const totalItems = data.length;
 
-  for(i=0;i<length;i++)
-  {
-      sort = length - (i+1);
-      const nama = data[sort].nama;
-      const pesan = data[sort].pesan;
-      const date = data[sort].date;
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
 
-      const dateStr = formatDate(new Date(date))
-      
-      content +=
-      `<div class="flex flex-col p-4 rounded-lg border border-black/75 bg-white/50">
+  if(totalItems > itemsPerPage) {
+    document.getElementById('pagination').classList.remove('hidden');
+  } else {
+    document.getElementById('pagination').classList.add('hidden');
+  };
+
+  let content = '';
+
+  for (let i = startIndex; i < endIndex; i++) {
+    const sort = totalItems - (i + 1);
+    const nama = data[sort].nama;
+    const pesan = data[sort].pesan;
+    const date = data[sort].date;
+    const dateStr = formatDate(new Date(date));
+
+    content += `<div class="flex flex-col p-4 rounded-lg border border-black/75 bg-white/50">
         <div class="flex justify-between">
-          <h5 class="text-sm font-semibold mb-2">${ nama }</h5>
-          <h5 class="text-sm font-semibold mb-2">${ dateStr }</h5>
-        </div
-        <p class="text-xs">${ pesan }</p>
-      </div>`
+          <h5 class="text-sm font-semibold mb-2">${nama}</h5>
+          <h5 class="text-sm font-semibold mb-2">${dateStr}</h5>
+        </div>
+        <p class="text-xs">${pesan}</p>
+      </div>`;
   }
 
   messageList.innerHTML = content;
+}
+
+function previousPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    getData(currentPage);
+  }
+}
+
+function nextPage() {
+  const totalItems = data.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    getData(currentPage);
+  }
 }
 
 async function postData(url = "", data = {}) {
@@ -170,8 +208,6 @@ async function postData(url = "", data = {}) {
     },
   });
   
-
-  console.log(response.response);
   return response;
 }
 
@@ -203,7 +239,7 @@ formMessage.addEventListener('submit', function (e) {
     sendLoading.classList.remove('flex')
     sendLoading.classList.add('hidden')
 
-    getData();
+    getData(currentPage);
   }).catch(error => console.error('Error:', error));
 });
 
@@ -225,3 +261,6 @@ function toggleModalImage(url) {
     src=${url} />`
   }
 }
+
+previousButton.addEventListener('click', previousPage);
+nextButton.addEventListener('click', nextPage);
