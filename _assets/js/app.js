@@ -7,7 +7,7 @@ if (to==null || to=="") {
     document.getElementById('guest').innerHTML = to;
 }
 
-if (count==null || count=="") {
+if (count==null || count=="" || count=="0") {
     document.getElementById('guestCount').innerHTML = "";
 } else {
     document.getElementById('guestCount').innerHTML = `Undangan hanya berlaku untuk ${count} orang`;
