@@ -10,7 +10,7 @@ if (to==null || to=="") {
 if (count==null || count=="" || count=="0") {
     document.getElementById('guestCount').innerHTML = "";
 } else {
-    document.getElementById('guestCount').innerHTML = `Undangan hanya berlaku untuk ${count} orang`;
+    document.getElementById('guestCount').innerHTML = `Undangan berlaku untuk ${count} orang`;
 }
 
 const btnOpen = document.querySelector('#btnOpen');
