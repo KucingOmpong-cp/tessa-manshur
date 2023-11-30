@@ -115,12 +115,12 @@ let x = setInterval(function() {
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 15,
-      center: { lat: -6.9162005, lng: 107.6106178 },
+      center: { lat: -6.928660, lng: 107.666525 },
   });
   const image =
       "_assets/img/maps-marker.svg";
   const beachMarker = new google.maps.Marker({
-      position: { lat: -6.9162005, lng: 107.6106178 },
+      position: { lat: -6.928660, lng: 107.666525 },
       map,
       icon: image,
   });
